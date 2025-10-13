@@ -20,7 +20,7 @@
         "https://example.com/video1.mp4"
     ],
     "vendedor": {
-        "id": ObjectId,
+        "id": ,
         "nombre": "Juan Perez",
         "email": "juan@gmail.com",
         "telefono": "3001234567",
@@ -56,3 +56,4 @@
     ]
 
 }
+
