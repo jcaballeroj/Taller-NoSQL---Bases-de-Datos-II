@@ -1,8 +1,8 @@
 {
-    "_id": ObjectId,
+    "_id":,
     "nombre": "Juan Perez",
     "documento": "12345678",
-    "fecha_nacimiento": ISODate("1990-05-15"),
+    "fecha_nacimiento": "1990-05-15",
     "direccion": {
         "departamento": "Cundinamarca",
         "ciudad": "Bogotá",
@@ -16,4 +16,5 @@
         "instagram": "juanperez"
     },
     "tipo": "vendedor"
+
 }
