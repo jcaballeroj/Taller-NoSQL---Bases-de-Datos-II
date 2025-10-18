@@ -1,6 +1,6 @@
 {
     "_id": ,
-    "nombre": "Juan Perez",
+    "nombre": "Carlos Gómez",
     "documento": "12345678",
     "fecha_nacimiento": "1990-05-15",
     "direccion": {
@@ -8,13 +8,14 @@
         "ciudad": "Bogotá",
         "direccion": "Calle 123 #45-67"
     },
-    "email": "juan@gmail.com",
+    "email": "carlos@gmail.com",
     "telefono": "3001234567",
     "redes_sociales": {
-        "twitter": "@juanperez",
-        "facebook": "juanperez",
-        "instagram": "juanperez"
+        "twitter": "@carlosgomez",
+        "facebook": "carlosgomez",
+        "instagram": "carlosgomez"
     },
     "fecha_registro": "2024-01-01",
     "estado": "activo"
+
 }
