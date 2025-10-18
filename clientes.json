@@ -1,0 +1,23 @@
+{
+    "_id": ,
+    "nombre": "Maria Garcia",
+    "documento": "87654321",
+    "fecha_nacimiento": "1992-08-20",
+    "direccion": {
+        "departamento": "Antioquia",
+        "ciudad": "Medellín",
+        "direccion": "Carrera 56 #12-34"
+    },
+    "email": "maria@example.com",
+    "telefono": "3012345678",
+    "redes_sociales": {
+        "twitter": "@mariag",
+        "facebook": "mariagarcia",
+        "instagram": "mariagarcia"
+    },
+    "fecha_registro": "2024-01-15",
+    "preferencias": [
+        "tecnología",
+        "hogar"
+    ]
+}
