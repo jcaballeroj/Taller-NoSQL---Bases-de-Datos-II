@@ -1,5 +1,5 @@
 {
-    "_id": ,
+    "_id": 1,
     "nombre": "Laptop Gamer",
     "descripcion": "Laptop para gaming de alta gama",
     "imagen": "https://example.com/laptop.jpg",
@@ -20,7 +20,7 @@
         "https://example.com/video1.mp4"
     ],
     "vendedor": {
-        "id": ,
+        "id": 1,
         "nombre": "Juan Perez",
         "email": "juan@gmail.com",
         "telefono": "3001234567",

@@ -1,0 +1,336 @@
+// Insertar un usuario (vendedor/comprador)
+db.usuarios.insertOne({
+  "nombre": "Juan Perez",
+  "documento": "12345678",
+  "fecha_nacimiento": new Date("1990-01-01"),
+  "direccion": {
+    "departamento": "Cundinamarca",
+    "ciudad": "Bogota",
+    "direccion": "Calle 123 # 45-67"
+  },
+  "email": "juanperez@gmail.com",
+  "telefono": "3001234567",
+  "twitter": "@juanperez",
+  "facebook": "juanperez",
+  "instagram": "juanperez"
+})
+
+// Insertar un producto
+db.productos.insertOne({
+  "nombre": "Laptop Gamer",
+  "descripcion": "Laptop para gaming de alta gama",
+  "imagen": "https://example.com/laptop.jpg",
+  "dimensiones": {
+    "alto": 2.5,
+    "ancho": 35,
+    "profundidad": 25
+  },
+  "categoria": "Tecnología",
+  "precio": 2500000,
+  "fecha_publicacion": new Date(),
+  "fecha_actualizacion": new Date(),
+  "stock": 10,
+  "disponible": true,
+  "descuentos": 0,
+  "manual_instrucciones": "https://example.com/manual.pdf",
+  "videos": ["https://example.com/video1.mp4"],
+  "vendedor_id": ObjectId("..."), // Reemplazar con el _id del usuario insertado
+  "calificaciones": [
+    {
+      "estrellas": 5,
+      "comentario": "Excelente producto",
+      "fecha": new Date(),
+      "anonimo": false,
+      "comprador_nombre": "Ana Garcia"
+    }
+  ],
+  "preguntas": [
+    {
+      "pregunta": "¿Trae tarjeta gráfica dedicada?",
+      "fecha": new Date(),
+      "anonimo": false,
+      "comprador_nombre": "Ana Garcia",
+      "interacciones": [
+        {
+          "comentario": "Sí, trae una NVIDIA RTX 3060",
+          "fecha": new Date(),
+          "vendedor_nombre": "Juan Perez",
+          "comprador_nombre": "Ana Garcia"
+        }
+      ]
+    }
+  ]
+})
+
+// Insertar 3 usuarios
+db.usuarios.insertMany([
+  {
+    "nombre": "Maria Rodriguez",
+    "documento": "87654321",
+    "fecha_nacimiento": new Date("1985-05-15"),
+    "direccion": {
+      "departamento": "Antioquia",
+      "ciudad": "Medellin",
+      "direccion": "Carrera 50 # 10-20"
+    },
+    "email": "mariarodriguez@gmail.com",
+    "telefono": "3007654321",
+    "twitter": "@mariarod",
+    "facebook": "mariarodriguez",
+    "instagram": "mariarod"
+  },
+  {
+    "nombre": "Carlos Lopez",
+    "documento": "11223344",
+    "fecha_nacimiento": new Date("1982-11-20"),
+    "direccion": {
+      "departamento": "Valle del Cauca",
+      "ciudad": "Cali",
+      "direccion": "Avenida 4N # 10-30"
+    },
+    "email": "carloslopez@gmail.com",
+    "telefono": "3001122334",
+    "twitter": "@carloslopez",
+    "facebook": "carloslopez",
+    "instagram": "carloslopez"
+  },
+  {
+    "nombre": "Laura Martinez",
+    "documento": "55667788",
+    "fecha_nacimiento": new Date("1995-03-10"),
+    "direccion": {
+      "departamento": "Cundinamarca",
+      "ciudad": "Bogota",
+      "direccion": "Calle 100 # 15-40"
+    },
+    "email": "lauramartinez@gmail.com",
+    "telefono": "3005566778",
+    "twitter": "@lauram",
+    "facebook": "lauramartinez",
+    "instagram": "lauramartinez"
+  }
+])
+
+// Insertar 3 productos
+db.productos.insertMany([
+  {
+    "nombre": "Smartphone Samsung Galaxy S23",
+    "descripcion": "Teléfono de alta gama con procesador Snapdragon 8 Gen 2, 256GB de almacenamiento y cámara de 50MP.",
+    "imagen": "https://example.com/galaxy-s23.jpg",
+    "dimensiones": { "alto": 15.1, "ancho": 7.2, "profundidad": 0.8 },
+    "categoria": "Smartphones",
+    "precio": 4200000,
+    "fecha_publicacion": new Date(),
+    "fecha_actualizacion": new Date(),
+    "stock": 12,
+    "disponible": true,
+    "descuentos": 5,
+    "manual_instrucciones": "https://example.com/manual-s23.pdf",
+    "videos": ["https://example.com/video-s23.mp4"],
+    "vendedor_id": maria._id,
+    "calificaciones": [
+      {
+        "estrellas": 4,
+        "comentario": "Excelente cámara, aunque se calienta un poco.",
+        "fecha": new Date(),
+        "anonimo": false,
+        "comprador_nombre": "Carlos Lopez"
+      }
+    ],
+    "preguntas": []
+  },
+  {
+    "nombre": "Tablet iPad Air M2",
+    "descripcion": "Tableta ligera con chip Apple M2, pantalla Liquid Retina y soporte para Apple Pencil 2.",
+    "imagen": "https://example.com/ipad-air-m2.jpg",
+    "dimensiones": { "alto": 24.7, "ancho": 17.8, "profundidad": 0.6 },
+    "categoria": "Tablets",
+    "precio": 3200000,
+    "fecha_publicacion": new Date(),
+    "fecha_actualizacion": new Date(),
+    "stock": 20,
+    "disponible": true,
+    "descuentos": 0,
+    "manual_instrucciones": "https://example.com/manual-ipad.pdf",
+    "videos": ["https://example.com/review-ipad.mp4"],
+    "vendedor_id": carlos._id,
+    "calificaciones": [
+      {
+        "estrellas": 5,
+        "comentario": "Increíble rendimiento y batería duradera.",
+        "fecha": new Date(),
+        "anonimo": false,
+        "comprador_nombre": "Laura Martinez"
+      }
+    ],
+    "preguntas": [
+      {
+        "pregunta": "¿Incluye el lápiz Apple Pencil?",
+        "fecha": new Date(),
+        "anonimo": false,
+        "comprador_nombre": "Laura Martinez",
+        "interacciones": [
+          {
+            "comentario": "No, se vende por separado.",
+            "fecha": new Date(),
+            "vendedor_nombre": "Carlos Lopez",
+            "comprador_nombre": "Laura Martinez"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "nombre": "Auriculares Sony WH-1000XM5",
+    "descripcion": "Audífonos inalámbricos con cancelación activa de ruido y 30 horas de batería.",
+    "imagen": "https://example.com/sony-wh1000xm5.jpg",
+    "dimensiones": { "alto": 25, "ancho": 20, "profundidad": 7 },
+    "categoria": "Audio",
+    "precio": 1800000,
+    "fecha_publicacion": new Date(),
+    "fecha_actualizacion": new Date(),
+    "stock": 15,
+    "disponible": true,
+    "descuentos": 10,
+    "manual_instrucciones": "https://example.com/manual-sony.pdf",
+    "videos": [],
+    "vendedor_id": laura._id,
+    "calificaciones": [
+      {
+        "estrellas": 5,
+        "comentario": "Sonido espectacular y comodidad absoluta.",
+        "fecha": new Date(),
+        "anonimo": true,
+        "comprador_nombre": ""
+      }
+    ],
+    "preguntas": []
+  }
+]);
+
+// Generar 10 usuarios
+var usuarios = [];
+for (var i = 1; i <= 10; i++) {
+  usuarios.push({
+    "nombre": "Usuario " + i,
+    "documento": "1000000" + i,
+    "fecha_nacimiento": new Date(1980 + i % 20, i % 12, i % 28),
+    "direccion": {
+      "departamento": i % 2 == 0 ? "Cundinamarca" : "Antioquia",
+      "ciudad": i % 2 == 0 ? "Bogota" : "Medellin",
+      "direccion": "Calle " + i + " # " + (i*2) + "-" + (i*3)
+    },
+    "email": "usuario" + i + "@gmail.com",
+    "telefono": "300000000" + i,
+    "twitter": "@usuario" + i,
+    "facebook": "usuario" + i,
+    "instagram": "usuario" + i
+  });
+}
+db.usuarios.insertMany(usuarios);
+
+// Obtener los ids de los usuarios insertados
+var usuariosIds = db.usuarios.find({}, {_id: 1}).toArray();
+
+// Generar 20 productos
+// Array base de nombres y categorías tecnológicas
+var nombresProductos = [
+  "Laptop HP Pavilion 15",
+  "Smartphone Samsung Galaxy S23",
+  "Tablet iPad Air M2",
+  "Monitor LG UltraGear 27\"",
+  "Auriculares Sony WH-1000XM5",
+  "Smartwatch Apple Watch Series 9",
+  "Teclado Mecánico Logitech G915",
+  "Mouse Inalámbrico Razer Basilisk X",
+  "Cámara GoPro Hero 12",
+  "Consola PlayStation 5",
+  "Router ASUS RT-AX88U",
+  "Proyector Epson Full HD",
+  "Micrófono Blue Yeti X",
+  "Disco SSD Samsung 980 PRO 1TB",
+  "Memoria RAM Corsair Vengeance 32GB",
+  "Tarjeta Gráfica NVIDIA RTX 4070",
+  "Cargador Inalámbrico Belkin Boost",
+  "Parlante Bluetooth JBL Charge 5",
+  "Tablet Samsung Galaxy Tab S9",
+  "Laptop Dell XPS 13"
+];
+
+var categorias = [
+  "Computadores",
+  "Smartphones",
+  "Tablets",
+  "Monitores",
+  "Audio",
+  "Relojes Inteligentes",
+  "Periféricos",
+  "Periféricos",
+  "Cámaras",
+  "Consolas",
+  "Redes",
+  "Proyectores",
+  "Audio",
+  "Almacenamiento",
+  "Componentes",
+  "Componentes",
+  "Accesorios",
+  "Audio",
+  "Tablets",
+  "Computadores"
+];
+
+var productos = [];
+
+for (var i = 0; i < 20; i++) {
+  var vendedor_index = i % usuariosIds.length;
+
+  productos.push({
+    "nombre": nombresProductos[i],
+    "descripcion": "Producto tecnológico de alta calidad: " + nombresProductos[i] + ". Ideal para profesionales y entusiastas de la tecnología.",
+    "imagen": "https://example.com/tecnologia" + (i + 1) + ".jpg",
+    "dimensiones": {
+      "alto": 10 + (i % 5),
+      "ancho": 20 + (i % 10),
+      "profundidad": 1.5 + (i % 3)
+    },
+    "categoria": categorias[i],
+    "precio": 500000 + (i * 200000),
+    "fecha_publicacion": new Date(2024, (i % 12), (i % 28) + 1),
+    "fecha_actualizacion": new Date(2025, (i % 12), (i % 28) + 1),
+    "stock": 5 + (i * 2),
+    "disponible": i % 2 === 0,
+    "descuentos": i % 4 === 0 ? 10 : 0, // Descuento 10% cada 4 productos
+    "manual_instrucciones": i % 3 === 0 ? "https://example.com/manual" + (i + 1) + ".pdf" : "",
+    "videos": i % 2 === 0 ? ["https://example.com/video" + (i + 1) + ".mp4"] : [],
+    "vendedor_id": usuariosIds[vendedor_index]._id,
+    "calificaciones": [
+      {
+        "estrellas": (i % 5) + 1,
+        "comentario": i % 2 === 0 ? "Excelente producto, cumple con lo esperado." : "Buen rendimiento, aunque podría mejorar el diseño.",
+        "fecha": new Date(2025, (i % 12), (i % 28) + 1),
+        "anonimo": i % 2 === 0,
+        "comprador_nombre": i % 2 === 0 ? "" : "Comprador " + (i + 1)
+      }
+    ],
+    "preguntas": [
+      {
+        "pregunta": "¿Este producto incluye garantía oficial?",
+        "fecha": new Date(2025, (i % 12), (i % 28) + 1),
+        "anonimo": i % 2 === 0,
+        "comprador_nombre": i % 2 === 0 ? "" : "Comprador " + (i + 1),
+        "interacciones": [
+          {
+            "comentario": "Sí, tiene garantía de 1 año directamente con el fabricante.",
+            "fecha": new Date(2025, (i % 12), (i % 28) + 1),
+            "vendedor_nombre": "Vendedor " + vendedor_index,
+            "comprador_nombre": i % 2 === 0 ? "" : "Comprador " + (i + 1)
+          }
+        ]
+      }
+    ]
+  });
+}
+
+// Insertar los 20 productos tecnológicos
+db.productos.insertMany(productos);

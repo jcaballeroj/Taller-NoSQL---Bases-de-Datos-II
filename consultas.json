@@ -1,0 +1,23 @@
+// a) Productos por fecha descendente
+db.productos.find({}, { nombre:1, precio:1, descripcion:1 }).sort({ fecha_publicacion:-1 })
+
+// b) Agrupar por categoría
+db.productos.aggregate([{ $group: { _id: "$categoria", total: { $sum: 1 } } }])
+
+// c) Rango de precios
+db.productos.find({ precio: { $gte: 1000000, $lte: 4000000 } })
+
+// d) Productos con alto < 10
+db.productos.find({ "dimensiones.alto": { $lt: 10 } })
+
+// e) Calificaciones ordenadas
+db.productos.find({ nombre: "Smartphone Galaxy Z" }, { valoraciones: 1, _id: 0 })
+
+// f) Datos completos de vendedor
+db.usuarios.find({ tipo: "vendedor", nombre: "Laura Martínez" })
+
+// g) Listado de vendedores ordenado
+db.usuarios.find({ tipo: "vendedor" }, { nombre: 1, "direccion.departamento": 1, "direccion.ciudad": 1 }).sort({ nombre: 1 })
+
+// h) Preguntas y respuestas de un producto puede ser por ObjetctID con shell o id agregado
+db.preguntas.find({ producto_id: ObjectId("671c010001") })

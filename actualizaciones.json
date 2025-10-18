@@ -1,0 +1,17 @@
+// a) Actualizar precio y fecha
+db.productos.updateOne(
+  { nombre: "Monitor Samsung 24\"" },
+  { $set: { precio: 580000, fecha_actualizacion: new Date() } }
+)
+
+// b) Stock a 0 y no disponible
+db.productos.updateMany(
+  { "vendedor.nombre": "Carlos Gómez" },
+  { $set: { stock: 0, disponible: false } }
+)
+
+// c) Eliminar calificaciones < 2 estrellas
+db.productos.updateOne(
+  { nombre: "Smartphone Galaxy Z" },
+  { $pull: { valoraciones: { calificacion: { $lt: 2 } } } }
+)
